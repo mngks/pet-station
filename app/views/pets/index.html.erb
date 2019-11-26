@@ -1,0 +1,13 @@
+<div class="banner" style="background-image: url('<%= image_path 'https://source.unsplash.com/featured/?dog' %>');">
+  <div class="banner-content">
+    <h1>Pets Station</h1>
+    <p>Give your pets a second chance at life</p>
+    <%= link_to "Add a pet", new_owner_path, class: "btn btn-primary btn-lg" %>
+  </div>
+</div>
+
+<ul>
+  <% @pets.each do |pet| %>
+  <li><%= pet.name %></li>
+  <% end %>
+</ul>
