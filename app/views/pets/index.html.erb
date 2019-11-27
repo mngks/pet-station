@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: url('<%= image_path 'https://source.unsplash.com/featured/?dog' %>');">
+<div class="banner" style="background-image: url('<%= image_path 'https://source.unsplash.com/1600x900/?dog' %>');">
   <div class="banner-content">
     <h1>Pets Station</h1>
     <p>Give your pets a second chance at life</p>
@@ -6,8 +6,19 @@
   </div>
 </div>
 
-<ul>
-  <% @pets.each do |pet| %>
-  <li><%= pet.name %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <div class="row">
+      <% @pets.each do |pet| %>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="<%= pet.image_url %>" alt="Card image">
+            <div class="card-body">
+              <h5 class="card-title"><%= pet.name %></h5>
+              <p class="card-text"><%= pet.description %></p>
+               <%= link_to "Find out more", pet_path(pet), class: "btn btn-primary" %>
+            </div>
+        </div>
+      <% end %>
+    </div>  
+  </div>
+</div>

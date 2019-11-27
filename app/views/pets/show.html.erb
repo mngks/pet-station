@@ -1,2 +1,33 @@
-<h1>Pets#show</h1>
-<p>Find me in app/views/pets/show.html.erb</p>
+<div class="container">
+  <div class="row justify-content-between">
+    
+    <div class="col-12 col-lg-4">
+      <%= image_tag @pet.image_url, class:"avatar_pet" %>
+      <h1> <%= @pet.name %> </h1>
+    </div>
+    
+    <div class="col-12 col-lg-8">      
+      <h2>Description</h2>
+        <p><%= @pet.description %></p>
+      
+      <h2>Age</h2>
+        <p><%= @pet.age %></p>
+        
+      <h2>Gender</h2>
+        <p><%= @pet.gender %></p>
+        
+      <h2>Category</h2>
+        <p><%= @pet.category %></p>
+
+      <h2>HDB_approved?</h2>        
+      <% if @pet.HDB_approved? %>
+      <p>yes</p>
+      <% else %>
+      <p>no</p>
+      <% end %>
+
+    </div>
+    
+  </div>
+  </div>
+</div>
