@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'pets#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :pets do
-    resources :adoption, only: [:create]
+  resources :pets, only: [:show, :index, :new] do
+    resources :adoptions, only: [:create]
   end
 
   resources :owners, only: [:new, :create]

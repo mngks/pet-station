@@ -26,7 +26,11 @@
       <p>no</p>
       <% end %>
 
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Adopt Me</button>
+      <%= simple_form_for ([@pet, @adoption]) do |f| %>
+        <%= f.button :submit, "Adopt Me", class: 'btn btn-primary' %>
+      <% end %>
+
+      <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Adopt Me</button>
       <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
           <div class="alert alert-success alert-dismissible">
@@ -34,6 +38,6 @@
             <strong>Your adoption request is successful!</strong>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>

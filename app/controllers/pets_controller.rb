@@ -4,9 +4,12 @@ class PetsController < ApplicationController
 
   def index
     @pets = Pet.all
+    # raise
   end
 
   def show
+    @adoption = @pet.adoptions.build
+    @adoption.user = current_user
   end
 
   def new
