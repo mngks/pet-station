@@ -7,37 +7,40 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="navbar navbar-light bg-light">
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
       </form>
-</div>
+  </div>
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+      
         <li class="nav-item active">
           <%= link_to "Add-a-Pet", new_pet_path, class: "nav-link" %>
         </li>
+        
         <li class="nav-item">
           <%= link_to "Adopt-a-Pet", root_path, class: "nav-link" %>
-        <li class="nav-item">
-        <% unless current_user.owner.nil?  %>
-        <button type="button" class="btn btn-primary">
-          Notifications <span class="badge badge-light"><%= current_user.owner.adoptions.count %></span>
-        </button>
-        <% end %>
-            </li>
         </li>
+        
+        <li class="nav-item">
+          <% unless current_user.owner.nil?  %>
+            <button type="button" class="btn btn-primary">
+              Notifications <span class="badge badge-info"><%= current_user.owner.adoptions.count %></span>
+            </button>
+          <% end %>
+        </li>
+        
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
         </li>
+        
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>

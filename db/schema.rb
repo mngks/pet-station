@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_051139) do
     t.string "category"
     t.integer "age"
     t.string "gender"
-    t.boolean "HDB_approved", default: false
+    t.boolean "HDB_approved"
     t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

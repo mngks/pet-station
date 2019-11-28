@@ -41,9 +41,9 @@
           <img class="card-img-top" src="https://res.cloudinary.com/drrxcbatq/image/upload/v1574864157/babies.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><%= pet.name %></h5>
-              <p><%= pet.age%>, <%= pet.gender.capitalize %></p>
+              <p><%= pet.age%>, <%= pet.gender %></p>
               <p class="card-text col-10 text-truncate"><%= pet.description %></p>
-               <%= link_to "Learn more", pet_path(pet), class: "btn btn-warning" %>
+               <%= link_to "Learn more", pet_path(pet), class: "btn btn-info" %>
             </div>
         </div>
       <% end %>
