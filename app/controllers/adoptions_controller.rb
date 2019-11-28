@@ -1,4 +1,8 @@
 class AdoptionsController < ApplicationController
+  def index
+    @adoptions = current_user.owner.adoptions
+  end
+
   def create
     @pet = Pet.find(params[:pet_id])
     @adoption = Adoption.new
@@ -6,7 +10,7 @@ class AdoptionsController < ApplicationController
     @adoption.user = current_user
 
     if @adoption.save
-      redirect_to root_path
+      redirect_to adoptions_path
     end
   end
 end
