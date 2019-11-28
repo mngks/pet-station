@@ -1,24 +1,64 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/drrxcbatq/image/upload/v1574865021/banner2.jpg);">
   <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <h1><strong>Adopt-a-pet at Pet Station</strong></h1>
+    <p>Change your life. Save a pet today.</p>
   </div>
 </div>
 
 <div class="container">
-  <div class="d-flex justify-content-center">
-    <div class="row">
+  <h5>Explore by categories</h5>
+  <div class="row d-flex justify-content-between">
+  <div class="cards text-center">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+      Dogs
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+      Cats
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+      Guinea Pigs, Hamster, Rabbits and Gerbils
+    </div>
+    
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+    Turtles, Terrapins and Tortoises
+    </div>
+  
+     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+    Others
+    </div>
+  </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <h5>Explore by pets</h5>
+    <div class="row d-flex justify-content-center">
       <% @pets.each do |pet| %>
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="<%= pet.image_url %>" alt="Card image">
+        <div class="card" style="width: 20rem;">
+          <img class="card-img-top" src="https://res.cloudinary.com/drrxcbatq/image/upload/v1574864157/babies.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><%= pet.name %></h5>
-              <p class="card-text"><%= pet.description %></p>
-               <%= link_to "Find out more", pet_path(pet), class: "btn btn-primary" %>
+              <p><%= pet.age%>, <%= pet.gender.capitalize %></p>
+              <p class="card-text col-10 text-truncate"><%= pet.description %></p>
+               <%= link_to "Learn more", pet_path(pet), class: "btn btn-warning" %>
             </div>
         </div>
       <% end %>
     </div>  
+  </div>
+</div>
+
+
+
+<div class="footer text-center">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+  </div>
+  <div class="footer-copyright">
+    <p>Copyright ©  2010-2019 Pet Station. All rights reserved.</p>
   </div>
 </div>

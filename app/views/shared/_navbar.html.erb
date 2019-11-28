@@ -1,18 +1,24 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= cl_image_tag "https://res.cloudinary.com/drrxcbatq/image/upload/v1574863376/logo.png" %>
+      <% end %>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+  
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar navbar-light bg-light">
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+      </form>
+  </div>
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Add-a-Pet", root_path, class: "nav-link" %>
+          <%= link_to "Add-a-Pet", new_pet_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Adopt-a-Pet", root_path, class: "nav-link" %>
