@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_132225) do
+ActiveRecord::Schema.define(version: 2019_11_28_051139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "adoptions", force: :cascade do |t|
     t.string "status"
-    t.bigint "owner_id"
     t.bigint "pet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_adoptions_on_owner_id"
+    t.bigint "user_id"
     t.index ["pet_id"], name: "index_adoptions_on_pet_id"
+    t.index ["user_id"], name: "index_adoptions_on_user_id"
   end
 
   create_table "owners", force: :cascade do |t|
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_11_27_132225) do
     t.string "category"
     t.integer "age"
     t.string "gender"
-    t.boolean "HDB_approved"
+    t.boolean "HDB_approved", default: false
     t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -65,8 +65,8 @@ ActiveRecord::Schema.define(version: 2019_11_27_132225) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "adoptions", "owners"
   add_foreign_key "adoptions", "pets"
+  add_foreign_key "adoptions", "users"
   add_foreign_key "owners", "users"
   add_foreign_key "pets", "owners"
 end

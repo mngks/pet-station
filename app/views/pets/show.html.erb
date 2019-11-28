@@ -1,33 +1,43 @@
 <div class="container">
   <div class="row justify-content-between">
-    
+
     <div class="col-12 col-lg-6">
       <%= image_tag @pet.image_url, class:"avatar-pet" %>
       <h1> <%= @pet.name %> </h1>
     </div>
-    
-    <div class="col-12 col-lg-6">      
-      <h2>Description</h2>
-        <p><%= @pet.description %></p>
-      
-      <h2>Age</h2>
-        <p><%= @pet.age %></p>
-        
-      <h2>Gender</h2>
-        <p><%= @pet.gender %></p>
-        
-      <h2>Category</h2>
-        <p><%= @pet.category %></p>
 
-      <h2>HDB_approved?</h2>        
+    <div class="col-12 col-lg-6">
+      <h2>Description</h2>
+      <p><%= @pet.description %></p>
+
+      <h2>Age</h2>
+      <p><%= @pet.age %></p>
+
+      <h2>Gender</h2>
+      <p><%= @pet.gender %></p>
+
+      <h2>Category</h2>
+      <p><%= @pet.category %></p>
+
+      <h2>HDB_approved?</h2>
       <% if @pet.HDB_approved? %>
       <p>yes</p>
       <% else %>
       <p>no</p>
       <% end %>
 
-    <button type="button" class="btn btn-primary">Adopt me</button>
+      <%= simple_form_for ([@pet, @adoption]) do |f| %>
+        <%= f.button :submit, "Adopt Me", class: 'btn btn-primary' %>
+      <% end %>
+
+      <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Adopt Me</button>
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="alert alert-success alert-dismissible">
+            <a  class="close" data-dismiss="modal" aria-label="close">&times;</a>
+            <strong>Your adoption request is successful!</strong>
+          </div>
+        </div>
+      </div> -->
     </div>
   </div>
-  </div>
-</div>

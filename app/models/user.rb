@@ -3,5 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_one :owner
+
+  # adoption chain for ownership
+  has_one :owner, dependent: :destroy
+
+  # adoption for adopting
+  has_many :adoptions
 end
