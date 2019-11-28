@@ -10,16 +10,16 @@ class OwnersController < ApplicationController
   end
 
   def create
-    @owner = Owner.new(owner_params) 
-    @owner.user = current_user 
-    
+    @owner = Owner.new(owner_params)
+    @owner.user = current_user
+
     if @owner.save
       redirect_to new_pet_path
     end
   end
-  
+
   private
-  
+
   def owner_params
     params.require(:owner).permit(:first_name, :last_name, :bio, :address, :contact, :photo)
   end

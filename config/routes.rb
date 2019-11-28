@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     resources :adoptions, only: [:create]
   end
 
+  resources :adoptions, only: [:index]
+
   resources :owners, only: [:new, :create]
 end

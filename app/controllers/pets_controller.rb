@@ -4,7 +4,6 @@ class PetsController < ApplicationController
 
   def index
     @pets = Pet.all
-    # raise
   end
 
   def show
