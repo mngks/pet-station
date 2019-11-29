@@ -3,7 +3,6 @@ class AdoptionsController < ApplicationController
     @adoptions = current_user.owner.adoptions
   end
 
-
   def create
     @pet = Pet.find(params[:pet_id])
     @adoption = Adoption.new

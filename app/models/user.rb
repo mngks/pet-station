@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   # adoption chain for ownership
   has_one :owner, dependent: :destroy
+  has_many :pets, through: :owner
 
   # adoption for adopting
   has_many :adoptions

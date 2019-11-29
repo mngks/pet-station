@@ -4,6 +4,19 @@ class PetsController < ApplicationController
 
   def index
     @pets = Pet.all
+
+    if user_signed_in?
+      # filtering pets that the current user owned
+      @pets -= current_user.pets
+
+      # filter pets that the current user adopted
+
+      @pets = @pets.reject do |pet|        
+        if pet.adoptions.count == 1
+          pet.adoptions.first.user == current_user
+        end
+      end
+    end
   end
 
   def show
@@ -18,9 +31,8 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
     @pet.owner = current_user.owner
-
     if @pet.save
-      redirect_to new_pet_path(@pet)
+      redirect_to pet_path(@pet)
     end
   end
 

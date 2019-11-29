@@ -19,7 +19,7 @@
               <p><strong><%= adoption.user.email %></strong> wants to adopt <strong><%= adoption.pet.name %></strong></p>
             </div>
             <div class="notification-actions">
-              <a href="#">Acknowledge</a>
+            <%= link_to "Acknowledge", root_path %>
             </div>
           </div>
           <% end %>

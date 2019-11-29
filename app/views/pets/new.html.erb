@@ -9,9 +9,7 @@
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.input :description %>
         <%= f.input :category, collection: [ "Dogs", "Cats", "Guinea Pigs, Hamster, Rabbits and Gerbils", "Turtles, Terrapins and Tortoises", "Others" ] %>
-        <%= f.input :age, as: :date, start_year: Date.today.year - 90,
-                              end_year: Date.today.year - 12, discard_day: true,
-                              order: [:month, :year] %>
+        <%= f.input :age %>
         <%= f.input :gender, collection: [ "Male", "Female" ] %>
         <%= f.input :HDB_approved %>
         <%= f.button :submit, class: 'btn btn-primary btn-block' %>

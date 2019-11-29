@@ -32,7 +32,7 @@ Pet.create!(
   image_url: "https://source.unsplash.com/featured/?dog",
   description: "best friend ever",
   category: "Terrapins",
-  # age: September 2018,
+  age: 3
   gender: "male",
   HDB_approved: true,
   owner: Owner.first
@@ -42,7 +42,7 @@ Pet.create!(
   image_url: "https://source.unsplash.com/featured/?dog",
   description: "best best friend ever",
   category: "Dogs",
-  # age: January 2015,
+  age: 4
   gender: "male",
   HDB_approved: true,
   owner: Owner.first
@@ -52,7 +52,7 @@ Pet.create!(
   image_url: "https://source.unsplash.com/featured/?dog",
   description: "best best best friend ever",
   category: "Dogs",
-  # age: February 2001,
+  age: 5
   gender: "male",
   HDB_approved: true,
   owner: Owner.first
@@ -62,7 +62,7 @@ Pet.create!(
   image_url: "https://source.unsplash.com/featured/?dog",
   description: "best best best friend ever",
   category: "Cats",
-  # age: November 2019,
+  age: 6
   gender: "male",
   HDB_approved: true,
   owner: Owner.first
