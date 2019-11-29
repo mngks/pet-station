@@ -22,14 +22,10 @@
         </li>
         
         <li class="nav-item">
-          <%= link_to "Adopt-a-Pet", root_path, class: "nav-link" %>
-        </li>
-        
-        <li class="nav-item">
           <% unless current_user.owner.nil?  %>
-            <button type="button" class="btn btn-primary">
-              Notifications <span class="badge badge-info"><%= current_user.owner.adoptions.count %></span>
-            </button>
+            <%= link_to adoptions_path, class: "btn btn-primary" do %>
+              Notifications <span class="badge badge-info"><%= current_user.owner.adoptions.count %><% link_to adoptions_path %></span>
+            <% end %>
           <% end %>
         </li>
         

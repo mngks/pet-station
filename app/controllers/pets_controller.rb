@@ -20,7 +20,7 @@ class PetsController < ApplicationController
     @pet.owner = current_user.owner
 
     if @pet.save
-      redirect_to pet_path(@pet)
+      redirect_to new_pet_path(@pet)
     end
   end
 
