@@ -5,7 +5,7 @@
 
       <%= simple_form_for (@pet) do |f| %>
         <%= f.input :name %>
-        <%= f.input :photo %>
+        <%= f.input :image_url %>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.input :description %>
         <%= f.input :category, collection: [ "Dogs", "Cats", "Guinea Pigs, Hamster, Rabbits and Gerbils", "Turtles, Terrapins and Tortoises", "Others" ] %>
