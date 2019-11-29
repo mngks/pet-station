@@ -29,40 +29,40 @@ Owner.create(
 puts 'create pets'
 Pet.create!(
   name: "Lemonade",
-  image_url: "https://source.unsplash.com/featured/?dog",
+  image_url: "https://source.unsplash.com/featured/100x200/?dog",
   description: "best friend ever",
   category: "Terrapins",
-  age: 3
+  age: 3,
   gender: "male",
   HDB_approved: true,
   owner: Owner.first
 )
 Pet.create!(
   name: "Spritzer",
-  image_url: "https://source.unsplash.com/featured/?dog",
+  image_url: "https://source.unsplash.com/featured/100x200/?dog",
   description: "best best friend ever",
   category: "Dogs",
-  age: 4
+  age: 4,
   gender: "male",
   HDB_approved: true,
   owner: Owner.first
 )
 Pet.create!(
   name: "Minty",
-  image_url: "https://source.unsplash.com/featured/?dog",
+  image_url: "https://source.unsplash.com/featured/100x200/?dog",
   description: "best best best friend ever",
   category: "Dogs",
-  age: 5
+  age: 5,
   gender: "male",
   HDB_approved: true,
   owner: Owner.first
 )
 Pet.create!(
   name: "Coco",
-  image_url: "https://source.unsplash.com/featured/?dog",
+  image_url: "https://source.unsplash.com/featured/100x200/?dog",
   description: "best best best friend ever",
   category: "Cats",
-  age: 6
+  age: 6,
   gender: "male",
   HDB_approved: true,
   owner: Owner.first
